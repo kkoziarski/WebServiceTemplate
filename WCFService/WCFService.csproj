@@ -65,6 +65,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\AppConfig.cs" />
+    <Compile Include="Infrastructure\BehaviorExtensions\DiagnosticExtensions\DiagnosticBehaviorExtensionElement.cs" />
+    <Compile Include="Infrastructure\BehaviorExtensions\DiagnosticExtensions\DiagnosticServiceBehavior.cs" />
+    <Compile Include="Infrastructure\BehaviorExtensions\DiagnosticExtensions\ServiceMessageInspector.cs" />
+    <Compile Include="Infrastructure\BehaviorExtensions\ElmahExtensions\ElmahCustomSqlErrorLog.cs" />
+    <Compile Include="Infrastructure\BehaviorExtensions\ElmahExtensions\ErrorLogger.cs" />
+    <Compile Include="Infrastructure\BehaviorExtensions\Validation\CustomValidationBehavior.cs" />
     <Compile Include="ServiceTemplate.svc.cs">
       <DependentUpon>ServiceTemplate.svc</DependentUpon>
     </Compile>
@@ -85,6 +92,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WCFService.Common\WCFService.Common.csproj">
+      <Project>{b9e26fba-d8c1-4ea3-b656-96263a53edf0}</Project>
+      <Name>WCFService.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
