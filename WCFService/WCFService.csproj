@@ -65,6 +65,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\NinjectWebCommonCopy.cs" />
     <Compile Include="Infrastructure\AppConfig.cs" />
     <Compile Include="Infrastructure\BehaviorExtensions\DiagnosticExtensions\DiagnosticBehaviorExtensionElement.cs" />
     <Compile Include="Infrastructure\BehaviorExtensions\DiagnosticExtensions\DiagnosticServiceBehavior.cs" />
@@ -72,15 +73,14 @@
     <Compile Include="Infrastructure\BehaviorExtensions\ElmahExtensions\ElmahCustomSqlErrorLog.cs" />
     <Compile Include="Infrastructure\BehaviorExtensions\ElmahExtensions\ErrorLogger.cs" />
     <Compile Include="Infrastructure\BehaviorExtensions\Validation\CustomValidationBehavior.cs" />
+    <Compile Include="Infrastructure\DependencyResolution\NinjectServiceModule.cs" />
     <Compile Include="ServiceTemplate.svc.cs">
       <DependentUpon>ServiceTemplate.svc</DependentUpon>
     </Compile>
     <Compile Include="IServiceTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="..\dbconnection.config">
       <Link>dbconnection.config</Link>
