@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".SolutionItems", ".SolutionItems", "{FBD1D8E2-371E-45CA-A6F2-D3A87D95D34E}"
 	ProjectSection(SolutionItems) = preProject
 		dbconnection.config = dbconnection.config
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
