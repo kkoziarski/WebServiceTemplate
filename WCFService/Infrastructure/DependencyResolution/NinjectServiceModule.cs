@@ -1,19 +1,16 @@
 ﻿namespace WCFService.Infrastructure.DependencyResolution
 {
-    //TODO: Enable when Ninject add
-    //using Ninject.Modules;
-    //using Ninject.Web.Common;
+    using Ninject.Modules;
+    using Ninject.Web.Common;
 
-    //using WCFService.Common.Diagnostic;
-    //using WCFService.Infrastructure;
+    using WCFService.BusinessLogic;
+    using WCFService.Common.Diagnostic;
 
-    //public class NinjectServiceModule : NinjectModule
-    //{
-    //    public override void Load()
-    //    {
-    //        ////repositories & unit of work
-    //        //this.Bind<DataModel>().ToSelf().InRequestScope();
-    //        //this.Bind<IUnitOfWork>().To<SqlUnitOfWork>().InRequestScope().WithConstructorArgument("connectionString", AppConfig.DatabaseConnectionString);
-    //    }
-    //}
+    public class NinjectServiceModule : NinjectModule
+    {
+        public override void Load()
+        {
+            this.Bind<IWebServiceDiagnosticService>().To<WebServiceDiagnosticServiceFake>().InRequestScope();
+        }
+    }
 }
