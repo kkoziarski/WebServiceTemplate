@@ -4,7 +4,11 @@
     using System.ServiceModel.Description;
     using System.ServiceModel.Dispatcher;
 
+    using Ninject;
+
+    using WCFService.App_Start;
     using WCFService.Common.DataContract.Shared;
+    using WCFService.Common.Diagnostic;
     using WCFService.Common.Infrastructure.BehaviorExtensions.Validation;
 
     public sealed class UserTokenValidationOperationInvoker : CustomValidationOperationInvokerBase
@@ -51,15 +55,9 @@
                 throw new FaultException(string.Format("[{0}]: Invalid empty webservice request", operationName));
             }
 
-            //TODO: update after ninject add
-            //IKernel kernel = NinjectWebCommon.CreateKernel(); //new StandardKernel(new OfflineServiceModule());
-            //var service = kernel.Get<IJobOfflineDataBusService>();
-            //var validationResult = service.ValidateUserForToken(tokenRequest.UserToken);
-            //if (validationResult == null)
-            //{
-            //    throw new FaultException("Invalid token");
-            //}
-
+            IKernel kernel = NinjectWebCommon.CreateKernel();
+            var service = kernel.Get<IWebServiceDiagnosticService>();
+            
             //tokenRequest.ValidatedUserId = validationResult.UserID;
 
             return true;

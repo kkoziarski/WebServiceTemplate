@@ -2,8 +2,11 @@
 {
     using System;
 
+    using Ninject;
+
     using WCFService.Common.Diagnostic;
     using WCFService.Common.Infrastructure.BehaviorExtensions.DiagnosticExtensions;
+    using WCFService.Infrastructure.DependencyResolution;
 
     public sealed class ServiceMessageInspector : ServiceMessageInspectorBase
     {
@@ -14,11 +17,8 @@
 
         protected override IWebServiceDiagnosticService InitializeDiagnosticService()
         {
-            // TODO: enable service diagnostic implementation
-            //IKernel kernel = new StandardKernel(new OfflineServiceModule());
-            //return kernel.Get<IWebServiceDiagnosticService>();
-
-            throw new NotImplementedException();
+            IKernel kernel = new StandardKernel(new NinjectServiceModule());
+            return kernel.Get<IWebServiceDiagnosticService>();
         }
     }
 }
