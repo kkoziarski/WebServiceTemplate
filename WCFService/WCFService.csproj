@@ -88,6 +88,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="BusinessLogic\ExampleBusinessService.cs" />
+    <Compile Include="BusinessLogic\IExampleBusinessService.cs" />
     <Compile Include="Infrastructure\AppConfig.cs" />
     <Compile Include="Infrastructure\BehaviorExtensions\DiagnosticExtensions\DiagnosticBehaviorExtensionElement.cs" />
     <Compile Include="Infrastructure\BehaviorExtensions\DiagnosticExtensions\DiagnosticServiceBehavior.cs" />

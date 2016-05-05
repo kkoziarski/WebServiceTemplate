@@ -11,6 +11,7 @@
         public override void Load()
         {
             this.Bind<IWebServiceDiagnosticService>().To<WebServiceDiagnosticServiceFake>().InRequestScope();
+            this.Bind<IExampleBusinessService>().To<ExampleBusinessService>();
         }
     }
 }
